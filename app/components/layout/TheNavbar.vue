@@ -42,8 +42,8 @@ const navLinkClasses =
 
 <template>
   <header :class="headerClasses">
-    <div class="mx-auto flex max-w-[1240px] items-center justify-between px-5 sm:px-8">
-      <NuxtLink to="/" class="shrink-0">
+    <div class="mx-auto flex max-w-[1240px] items-center justify-between gap-3 px-4 min-[400px]:px-5 sm:px-8">
+      <NuxtLink to="/" class="min-w-0 shrink">
         <AppLogo show-tagline />
       </NuxtLink>
 

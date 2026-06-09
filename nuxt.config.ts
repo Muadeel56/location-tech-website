@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   components: [
+    { path: '~/components', ignore: ['layout/**'] },
     { path: '~/components/layout', pathPrefix: false },
   ],
 
@@ -19,6 +20,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/google-fonts',
     '@vueuse/nuxt',
+    '@vueuse/motion/nuxt',
     '@nuxt/icon',
     '@nuxt/content',
   ],

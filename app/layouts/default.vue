@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen bg-brand-dark font-dm">
+  <div class="min-h-screen overflow-x-hidden bg-brand-dark font-dm">
     <TheNavbar />
-    <main>
+    <main class="overflow-x-hidden">
       <slot />
     </main>
     <TheFooter />

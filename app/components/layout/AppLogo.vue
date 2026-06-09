@@ -8,7 +8,7 @@ withDefaults(
 </script>
 
 <template>
-  <span class="flex items-center gap-3 font-syne text-[19px] font-extrabold text-white">
+  <span class="flex min-w-0 items-center gap-2.5 font-syne text-[15px] font-extrabold text-white min-[400px]:gap-3 min-[400px]:text-[17px] sm:text-[19px]">
     <span class="flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-[11px] gradient-bg shadow-[0_6px_18px_-6px_rgba(0,180,216,0.6)]">
       <svg viewBox="0 0 24 24" fill="none" class="h-[21px] w-[21px]" aria-hidden="true">
         <path
@@ -20,11 +20,11 @@ withDefaults(
         <circle cx="12" cy="10" r="2.4" fill="#04121C" />
       </svg>
     </span>
-    <span>
-      Location Technologies
+    <span class="min-w-0 leading-tight">
+      <span class="block truncate">Location Technologies</span>
       <small
         v-if="showTagline"
-        class="mt-px block font-dm text-[10.5px] font-medium uppercase tracking-[0.16em] text-brand-cyan"
+        class="mt-px hidden font-dm text-[10.5px] font-medium uppercase tracking-[0.16em] text-brand-cyan min-[400px]:block"
       >
         Map · Track · Connect
       </small>
