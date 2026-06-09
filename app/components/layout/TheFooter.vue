@@ -25,24 +25,31 @@ const year = new Date().getFullYear()
 </script>
 
 <template>
-  <footer class="border-t border-brand-cyan/10 bg-[#081120] pt-20 text-white">
-    <div class="mx-auto max-w-[1240px] px-5 sm:px-8">
-      <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.3fr] lg:gap-12">
+  <footer class="overflow-hidden border-t border-brand-cyan/10 bg-[#081120] pt-12 text-white min-[400px]:pt-16 min-[981px]:pt-20">
+    <div class="mx-auto max-w-[1240px] px-4 min-[400px]:px-5 sm:px-8">
+      <!--
+        Mobile (<560px): 1 column
+        Tablet (560–980px): 2 columns — brand + contact span full width
+        Desktop (981px+): 4 columns
+      -->
+      <div
+        class="grid grid-cols-1 gap-8 min-[560px]:grid-cols-2 min-[560px]:gap-10 min-[981px]:grid-cols-[1.6fr_1fr_1fr_1.3fr] min-[981px]:gap-12"
+      >
         <!-- Brand -->
-        <div>
-          <NuxtLink to="/" class="mb-5 inline-block">
+        <div class="min-w-0 min-[560px]:col-span-2 min-[981px]:col-span-1">
+          <NuxtLink to="/" class="mb-4 inline-block min-[400px]:mb-5">
             <AppLogo />
           </NuxtLink>
-          <p class="max-w-[300px] text-[15px] leading-relaxed text-[#94A6BE]">
+          <p class="max-w-md text-sm leading-relaxed text-[#94A6BE] min-[400px]:max-w-[300px] min-[400px]:text-[15px]">
             Precision GIS, GPS tracking, and geofencing solutions engineered for modern enterprises across Pakistan.
           </p>
-          <div class="mt-6 flex gap-3">
+          <div class="mt-5 flex gap-3 min-[400px]:mt-6">
             <a
               v-for="social in socials"
               :key="social.icon"
               :href="social.href"
               :aria-label="social.label"
-              class="group flex h-[42px] w-[42px] items-center justify-center rounded-[11px] border border-white/10 bg-white/[0.04] transition-all duration-250 hover:-translate-y-0.5 hover:border-transparent hover:gradient-bg"
+              class="group flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[11px] border border-white/10 bg-white/[0.04] transition-all duration-250 hover:-translate-y-0.5 hover:border-transparent hover:gradient-bg"
             >
               <Icon
                 :name="social.icon"
@@ -53,15 +60,15 @@ const year = new Date().getFullYear()
         </div>
 
         <!-- Quick Links -->
-        <div>
-          <h4 class="mb-[22px] font-syne text-base font-bold text-white">
+        <div class="min-w-0">
+          <h4 class="mb-4 font-syne text-base font-bold text-white min-[400px]:mb-[22px]">
             Quick Links
           </h4>
-          <ul class="flex flex-col gap-[13px]">
+          <ul class="flex flex-col gap-3 min-[400px]:gap-[13px]">
             <li v-for="link in navLinks" :key="link.to">
               <NuxtLink
                 :to="link.to"
-                class="text-[15px] text-[#94A6BE] transition-colors duration-200 hover:text-brand-cyan"
+                class="text-sm text-[#94A6BE] transition-colors duration-200 hover:text-brand-cyan min-[400px]:text-[15px]"
               >
                 {{ link.label }}
               </NuxtLink>
@@ -70,15 +77,15 @@ const year = new Date().getFullYear()
         </div>
 
         <!-- Services -->
-        <div>
-          <h4 class="mb-[22px] font-syne text-base font-bold text-white">
+        <div class="min-w-0">
+          <h4 class="mb-4 font-syne text-base font-bold text-white min-[400px]:mb-[22px]">
             Services
           </h4>
-          <ul class="flex flex-col gap-[13px]">
+          <ul class="flex flex-col gap-3 min-[400px]:gap-[13px]">
             <li v-for="service in services" :key="service.label">
               <NuxtLink
                 :to="service.to"
-                class="text-[15px] text-[#94A6BE] transition-colors duration-200 hover:text-brand-cyan"
+                class="text-sm text-[#94A6BE] transition-colors duration-200 hover:text-brand-cyan min-[400px]:text-[15px]"
               >
                 {{ service.label }}
               </NuxtLink>
@@ -87,24 +94,24 @@ const year = new Date().getFullYear()
         </div>
 
         <!-- Get in Touch -->
-        <div>
-          <h4 class="mb-[22px] font-syne text-base font-bold text-white">
+        <div class="min-w-0 min-[560px]:col-span-2 min-[981px]:col-span-1">
+          <h4 class="mb-4 font-syne text-base font-bold text-white min-[400px]:mb-[22px]">
             Get in Touch
           </h4>
-          <ul class="flex flex-col gap-[13px]">
-            <li class="flex items-start gap-3 text-[15px] leading-normal text-[#94A6BE]">
+          <ul class="flex flex-col gap-3 min-[400px]:gap-[13px] min-[981px]:max-w-none">
+            <li class="flex items-start gap-3 text-sm leading-normal text-[#94A6BE] min-[400px]:text-[15px]">
               <Icon name="mdi:email-outline" class="mt-0.5 h-[17px] w-[17px] shrink-0 text-brand-cyan" />
-              <a href="mailto:hello@loctech.pk" class="transition-colors hover:text-brand-cyan">
+              <a href="mailto:hello@loctech.pk" class="break-all transition-colors hover:text-brand-cyan min-[981px]:break-normal">
                 hello@loctech.pk
               </a>
             </li>
-            <li class="flex items-start gap-3 text-[15px] leading-normal text-[#94A6BE]">
+            <li class="flex items-start gap-3 text-sm leading-normal text-[#94A6BE] min-[400px]:text-[15px]">
               <Icon name="mdi:phone-outline" class="mt-0.5 h-[17px] w-[17px] shrink-0 text-brand-cyan" />
               <a href="tel:+92510000000" class="transition-colors hover:text-brand-cyan">
                 +92 51 000 0000
               </a>
             </li>
-            <li class="flex items-start gap-3 text-[15px] leading-normal text-[#94A6BE]">
+            <li class="flex items-start gap-3 text-sm leading-normal text-[#94A6BE] min-[400px]:text-[15px]">
               <Icon name="mdi:map-marker-outline" class="mt-0.5 h-[17px] w-[17px] shrink-0 text-brand-cyan" />
               <span>Rawalpindi, Pakistan</span>
             </li>
@@ -112,10 +119,14 @@ const year = new Date().getFullYear()
         </div>
       </div>
 
-      <div class="mt-16 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.07] py-[26px] text-sm text-brand-gray">
-        <span>&copy; {{ year }} Location Technologies Private Limited. All rights reserved.</span>
-        <span class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" fill="none" class="h-[15px] w-[15px]" aria-hidden="true">
+      <div
+        class="mt-10 flex flex-col items-start gap-4 border-t border-white/[0.07] py-6 text-center text-xs text-brand-gray min-[400px]:mt-12 min-[400px]:py-[26px] min-[400px]:text-sm min-[640px]:flex-row min-[640px]:items-center min-[640px]:justify-between min-[640px]:gap-3 min-[640px]:text-left"
+      >
+        <span class="w-full min-[640px]:w-auto">
+          &copy; {{ year }} Location Technologies Private Limited. All rights reserved.
+        </span>
+        <span class="flex w-full items-center justify-center gap-2 min-[640px]:w-auto min-[640px]:justify-end">
+          <svg viewBox="0 0 24 24" fill="none" class="h-[15px] w-[15px] shrink-0" aria-hidden="true">
             <circle cx="12" cy="12" r="9" stroke="#00C896" stroke-width="1.8" />
             <circle cx="12" cy="12" r="3" stroke="#00C896" stroke-width="1.8" />
             <path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="#00C896" stroke-width="1.8" stroke-linecap="round" />
