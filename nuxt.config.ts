@@ -43,6 +43,12 @@ export default defineNuxtConfig({
     },
   },
 
+  content: {
+    experimental: {
+      nativeSqlite: true,
+    },
+  },
+
   nitro: {
     prerender: { crawlLinks: true },
   },
