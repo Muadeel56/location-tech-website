@@ -7,10 +7,10 @@ const projects = computed(() => data.value?.projects ?? [])
 
 const categories = [
   { label: 'All', value: 'all' },
-  { label: 'GIS & Mapping', value: 'gis' },
-  { label: 'GPS Tracking', value: 'tracking' },
-  { label: 'Geofencing', value: 'geofencing' },
-  { label: 'Analytics', value: 'analytics' },
+  { label: 'SaaS & Web Apps', value: 'saas' },
+  { label: 'GIS & Mapping', value: 'mapping' },
+  { label: 'Mobile Apps', value: 'mobile' },
+  { label: 'E-Commerce', value: 'ecommerce' },
 ]
 
 const activeFilter = ref('all')
@@ -24,31 +24,31 @@ function isVisible(category: string) {
 }
 
 const categoryIcons: Record<string, string> = {
-  gis: 'mdi:map',
-  tracking: 'mdi:truck-fast',
-  geofencing: 'mdi:map-marker-radius',
-  analytics: 'mdi:chart-line',
+  saas: 'mdi:cloud-braces',
+  mapping: 'mdi:map',
+  mobile: 'mdi:cellphone',
+  ecommerce: 'mdi:storefront-outline',
 }
 
 const categoryLabels: Record<string, string> = {
-  gis: 'GIS & Mapping',
-  tracking: 'GPS Tracking',
-  geofencing: 'Geofencing',
-  analytics: 'Analytics',
+  saas: 'SaaS & Web Apps',
+  mapping: 'GIS & Mapping',
+  mobile: 'Mobile Apps',
+  ecommerce: 'E-Commerce',
 }
 
 const categoryShort: Record<string, string> = {
-  gis: 'GIS',
-  tracking: 'Tracking',
-  geofencing: 'Geofencing',
-  analytics: 'Analytics',
+  saas: 'SaaS',
+  mapping: 'GIS',
+  mobile: 'Mobile',
+  ecommerce: 'E-Commerce',
 }
 
 const bgGradients: Record<string, string> = {
-  gis: 'bg-gis',
-  tracking: 'bg-track',
-  geofencing: 'bg-geo',
-  analytics: 'bg-analytics',
+  saas: 'bg-saas',
+  mapping: 'bg-mapping',
+  mobile: 'bg-mobile',
+  ecommerce: 'bg-ecommerce',
 }
 </script>
 
@@ -92,7 +92,7 @@ const bgGradients: Record<string, string> = {
           <div class="pthumb relative h-[220px] overflow-hidden">
             <div
               class="bgfill absolute inset-0 transition-transform duration-500 group-hover:scale-[1.05]"
-              :class="bgGradients[project.category] ?? bgGradients.gis"
+              :class="bgGradients[project.category] ?? bgGradients.saas"
             />
             <div
               class="pattern absolute inset-0 opacity-[0.22]"
@@ -151,19 +151,19 @@ const bgGradients: Record<string, string> = {
 </template>
 
 <style scoped>
-.bg-gis {
+.bg-saas {
   background: linear-gradient(135deg, #00B4D8 0%, #0a7d9c 100%);
 }
 
-.bg-track {
-  background: linear-gradient(135deg, #16314f 0%, #0A1628 100%);
-}
-
-.bg-geo {
+.bg-mapping {
   background: linear-gradient(135deg, #00C896 0%, #0a7d63 100%);
 }
 
-.bg-analytics {
+.bg-mobile {
+  background: linear-gradient(135deg, #16314f 0%, #0A1628 100%);
+}
+
+.bg-ecommerce {
   background: linear-gradient(135deg, #0a7d9c 0%, #00C896 100%);
 }
 
